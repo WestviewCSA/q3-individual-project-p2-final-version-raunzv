@@ -11,40 +11,10 @@ public class MazeReader {
 
         boolean queueBase = false;
         boolean stackBase = false;
-        boolean optimal = false;
-        boolean showTime = false;
-        boolean inCoord = false;
-        boolean outCoord = false;
-
-
-        for(String arg : args) {
-            if(arg.equals("--Stack")) {
-                stackBase = true;
-            }
-            if(arg.equals("--Queue")) {
-                queueBase = true;
-            }
-            if(arg.equals("--Opt")) {
-                optimal = true;
-            }
-            if(arg.equals("--Time")) {
-                showTime = true;
-            }
-            if(arg.equals("--Incoordinate")) {
-                inCoord = true;
-            }
-            if(arg.equals("--Outcoordinate")) {
-                outCoord = true;
-            }
-            if(arg.equals("--Help")) {
-                System.out.println("Help");
-            }
-        }
-
-
-        if(stackBase == true && queueBase == true) {
-            System.exit(-1);
-        }
+        boolean optimal   = false;
+        boolean showTime  = false;
+        boolean inCoord   = false;
+        boolean outCoord  = false;
     }
 
 
