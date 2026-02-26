@@ -1,0 +1,20 @@
+Week 1:
+- Make sure I can push and commit changes to repository linked to GitHub classroom assignment
+- Create easy, medium, hard text-based maps showing understanding of the maps
+- Create easy, medium, hard coordinate-based maps showing understanding of the 2nd type of input files
+- Be able to read in data from map files
+- Be able to store data from map files
+
+Week 2:
+- Start writing code that works with Queue-based approach
+- Start writing code that works with Stack-based approach
+- Find W and $ positions in the map
+- Test queue and stack on easy map
+
+Week 3:
+- Implement path tracing to mark route with '+'
+- Implement optimal path algorithm
+- Handle multiple maze levels
+- Handle case where no path exists
+- Final testing and debugging and submit
+
