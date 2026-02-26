@@ -1,3 +1,22 @@
 Questions:
 
 Write as many questions as you can based on the project specs.
+
+When is the project due?
+What is a "maze level"?
+Can we use a built-in stack or queue instead of making our own?
+Can we use existing pathfinding algorithms?
+Do we need to handle every possible scenario to get full credit?
+Can we use data structures other than stacks and queues?
+Is there a runtime limit for full credit, and if so, what is it?
+Can we still get full credit if our solution is slow but correct?
+Can we score above 100% by completing the extra credit?
+Do we write our own tests or are they provided?
+How many commits and pushes are needed for full credit?
+If we finish early, do we still need to keep committing to get full credit?
+Where should we start when writing the design plan?
+Is a brute force approach that tries every path allowed?
+Do we need to add comments explaining what our code does?
+
+
+
