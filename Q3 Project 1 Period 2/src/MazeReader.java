@@ -2,34 +2,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
 public class MazeReader {
-    public static void main(String[] args) throws FileNotFoundException {
-        String[][][] map = getTextBasedMap("src/easyMap1.txt");
-        printMap(map);
-
-
-        boolean queueBase = false;
-        boolean stackBase = false;
-        boolean optimal   = false;
-        boolean showTime  = false;
-        boolean inCoord   = false;
-        boolean outCoord  = false;
-    }
-
 
     public static String[][][] getTextBasedMap(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
         Scanner scanner = new Scanner(file);
 
-
-        int rows    = scanner.nextInt();
+        int rows = scanner.nextInt();
         int columns = scanner.nextInt();
-        int levels  = scanner.nextInt();
-
+        int levels = scanner.nextInt();
 
         String[][][] mapping = new String[levels][rows][columns];
-
 
         for (int i = 0; i < levels; i++) {
             for (int j = 0; j < rows; j++) {
@@ -40,16 +23,14 @@ public class MazeReader {
             }
         }
 
-
         scanner.close();
         return mapping;
     }
 
-
     public static void printMap(String[][][] map) {
-        for(int i = 0; i < map.length; i++) {
-            for(int j = 0; j < map[i].length; j++) {
-                for(int h = 0; h < map[i][j].length; h++) {
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[i].length; j++) {
+                for (int h = 0; h < map[i][j].length; h++) {
                     System.out.print(map[i][j][h]);
                 }
                 System.out.println();
@@ -57,6 +38,3 @@ public class MazeReader {
         }
     }
 }
-
-
-
