@@ -75,7 +75,7 @@ public class p2 {
             if (queueMode) {
                 solvedMap = MazeSolver.solveWithQueue(map);
             }
-            // TODO: stack and optimal solvers
+            // DOOO THIS LATER stack and optimal solvers
 
             double endTime = System.nanoTime();
 
