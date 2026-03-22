@@ -46,12 +46,9 @@ public class p2 {
 
         // validate exactly one mode is set
         int modeCount = 0;
-        if (stackMode)
-            modeCount++;
-        if (queueMode)
-            modeCount++;
-        if (optMode)
-            modeCount++;
+        if (stackMode) modeCount++;
+        if (queueMode) modeCount++;
+        if (optMode) modeCount++;
 
         if (modeCount != 1) {
             try {
@@ -66,25 +63,37 @@ public class p2 {
         String fileName = args[args.length - 1];
 
         try {
-            String[][][] map = MazeReader.getTextBasedMap(fileName);
+            // read map based on input format
+            String[][][] map;
+            if (inCoord) {
+                map = MazeReader.getCoordinateBasedMap(fileName);
+            } else {
+                map = MazeReader.getTextBasedMap(fileName);
+            }
 
             double startTime = System.nanoTime();
 
+            // call the appropriate solver
             String[][][] solvedMap = null;
-
             if (queueMode) {
                 solvedMap = MazeSolver.solveWithQueue(map);
+            } else if (stackMode) {
+                solvedMap = MazeSolver.solveWithStack(map);
             }
-            // DOOO THIS LATER stack and optimal solvers
+            // TODO: optimal solver
 
             double endTime = System.nanoTime();
 
+            // print result
             if (solvedMap == null) {
                 System.out.println("The Wolverine Store is closed.");
+            } else if (outCoord) {
+                MazeReader.printCoordinatePath(solvedMap);
             } else {
                 MazeReader.printMap(solvedMap);
             }
 
+            // print runtime if requested
             if (showTime) {
                 double seconds = (endTime - startTime) / 1000000000.0;
                 System.out.println("Total Runtime: " + seconds + " seconds");
@@ -92,6 +101,15 @@ public class p2 {
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + fileName);
+            System.exit(-1);
+        } catch (IncorrectMapFormatException e) {
+            System.out.println(e.getMessage());
+            System.exit(-1);
+        } catch (IncompleteMapException e) {
+            System.out.println(e.getMessage());
+            System.exit(-1);
+        } catch (IllegalMapCharacterException e) {
+            System.out.println(e.getMessage());
             System.exit(-1);
         }
     }
