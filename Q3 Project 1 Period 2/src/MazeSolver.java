@@ -322,4 +322,9 @@ public class MazeSolver {
 
         return map;
     }
+
+    // optimal solver — BFS finds shortest path since all steps cost 1
+    public static String[][][] solveOptimal(String[][][] map) {
+        return solveWithQueue(map);
+    }
 }

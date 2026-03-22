@@ -46,9 +46,12 @@ public class p2 {
 
         // validate exactly one mode is set
         int modeCount = 0;
-        if (stackMode) modeCount++;
-        if (queueMode) modeCount++;
-        if (optMode) modeCount++;
+        if (stackMode)
+            modeCount++;
+        if (queueMode)
+            modeCount++;
+        if (optMode)
+            modeCount++;
 
         if (modeCount != 1) {
             try {
@@ -79,8 +82,9 @@ public class p2 {
                 solvedMap = MazeSolver.solveWithQueue(map);
             } else if (stackMode) {
                 solvedMap = MazeSolver.solveWithStack(map);
+            } else if (optMode) {
+                solvedMap = MazeSolver.solveOptimal(map);
             }
-            // TODO: optimal solver
 
             double endTime = System.nanoTime();
 
